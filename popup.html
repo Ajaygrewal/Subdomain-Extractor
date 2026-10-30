@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subdomain Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔍 Subdomain Extractor</h1>
+      <p>Extract domains & subdomains from any page</p>
+    </div>
+
+    <!-- Scan Button -->
+    <button id="scanBtn" class="btn btn-scan">🚀 SCAN PAGE</button>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading" style="display: none;">
+      <div class="spinner"></div>
+      <p>Scanning page...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results" class="results" style="display: none;">
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <input type="text" id="filterInput" placeholder="Filter domains..." class="filter-input">
+        
+        <select id="extensionFilter" class="filter-select">
+          <option value="">All Extensions</option>
+          <option value=".com">.com</option>
+          <option value=".in">.in</option>
+          <option value=".org">.org</option>
+          <option value=".net">.net</option>
+          <option value=".co.uk">.co.uk</option>
+          <option value=".io">.io</option>
+          <option value=".dev">.dev</option>
+          <option value="custom">Custom Filter</option>
+        </select>
+
+        <input type="text" id="customExtension" placeholder="e.g., .xyz" class="filter-input" style="display: none;">
+      </div>
+
+      <!-- Count Info -->
+      <div class="info-box">
+        <span id="countInfo">Found: 0 domains</span>
+      </div>
+
+      <!-- Domains List -->
+      <div class="list-container">
+        <div id="domainsList" class="domains-list"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="copyAllBtn" class="btn btn-secondary">📋 Copy All</button>
+        <button id="downloadCsvBtn" class="btn btn-secondary">📊 CSV</button>
+        <button id="downloadJsonBtn" class="btn btn-secondary">📦 JSON</button>
+        <button id="downloadTxtBtn" class="btn btn-secondary">📄 TXT</button>
+      </div>
+
+      <!-- Copy Notification -->
+      <div id="copyNotification" class="notification" style="display: none;">
+        ✅ Copied to clipboard!
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error" class="error" style="display: none;"></div>
+
+    <!-- Empty State -->
+    <div id="empty" class="empty-state" style="display: none;">
+      <p>No domains found on this page</p>
+      <p style="font-size: 12px; color: #999;">Try scanning again or visit a different page</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
