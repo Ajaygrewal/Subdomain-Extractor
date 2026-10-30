@@ -13,10 +13,15 @@ During reconnaissance, security researchers often need to manually scan through 
 Features
 
 One-click scanning — Extract all domains from the active tab instantly
+
 Smart filtering — Filter results by extension (.com, .in, .org, custom)
+
 Live search — Search within extracted results by keyword
+
 Export options — Download results as CSV, JSON, or TXT
+
 Clipboard support — Copy individual results or the full list
+
 Zero configuration — No setup, no API keys, works out of the box
 
 Installation
@@ -24,42 +29,63 @@ Installation
 Since this extension is not published on the Chrome Web Store, it must be loaded manually in Developer Mode.
 
 Download or clone this repository
+
 Extract the ZIP file (if downloaded as ZIP)
+
 Open Chrome and navigate to chrome://extensions/
+
 Enable Developer mode (toggle in the top-right corner)
+
 Click Load unpacked
+
 Select the extracted project folder
+
 The extension icon will now appear in your toolbar
 
 Usage
 
 Navigate to the target website
+
 Click the extension icon in the Chrome toolbar
+
 Click Scan Page
+
 Review the extracted list of domains and file references
+
 Use the filter or search bar to narrow results
+
 Export the results as CSV, JSON, or TXT — or copy them directly
 
 Use Cases
 
 Scenario	How it helps
+
 Reconnaissance	Quickly surface subdomains and linked assets on a target
+
 OSINT	Map out a website's domain footprint
+
 Penetration Testing	Build a target list for further enumeration
+
 Research	Understand a site's third-party integrations and structure
 
 Project Structure
 
 manifest.json  → Extension configuration
+
 popup.html    → User interface (what you see)
+
 popup.css     → Styling & colors
+
 popup.js      → Logic (domain extraction)
+
 icon.png      → Extension icon
 
 Known Limitations
 
 Chrome only — not compatible with Firefox or other Chromium-based forks without modification
+
 Cannot scan internal browser pages (chrome://, about:, etc.) due to browser security restrictions
+
 Results depend on what's present in the page's HTML — heavily obfuscated or dynamically rendered content may yield partial results
 
 Troubleshooting
